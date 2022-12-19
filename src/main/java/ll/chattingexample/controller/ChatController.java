@@ -18,6 +18,12 @@ import java.util.stream.IntStream;
 public class ChatController {
     private List<ChatMessage> chatMessages = new ArrayList<>();
 
+    @GetMapping("/room")
+    public String showRoom(){
+        return "chat/room";
+    }
+
+
     @PostMapping("/writeMessage")
     @ResponseBody
     public RsData<WriteMessageResponse> writeMessage(@RequestBody WriteMessageRequest request){
